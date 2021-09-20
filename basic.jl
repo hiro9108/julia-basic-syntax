@@ -93,3 +93,49 @@ println(dict) # dict before merge. Doesn't be destroyed.
 
 println(haskey(dict, "a"))
 println(haskey(dict, "r"))
+
+
+println("----- Multiple Array -----")
+println([1, 2, 3])
+println(Float64[1, 2, 3])
+println(Vector(1:4))
+
+
+println("----- Two-dimensional array -----")
+println([1 2; 3 4])
+println([1 2
+        3 4])
+println(Float64[1 2; 3 4])
+
+println(Array{Float64}(undef, 2, 2))
+println(zeros(Float64, 2, 2))
+println(ones(Float64, 1, 2))
+println(fill(2, 2, 2))
+println(rand(2, 2))
+println(randn(2, 2))
+
+println("----- One-dimensional array methods -----")
+vec = Vector(1:5)
+println("Sample: $(vec)")
+println(vec[2])
+println(vec[begin])
+println(vec[end])
+println(vec[2:4])
+println(vec[1:2:end])
+println(vec[[1, 3]])
+println(vec[vec .< 3])
+
+
+println("----- Two-dimensional array methods -----")
+mat = [1 2 3; 4 5 6]
+println("Sample: $(mat)")
+
+println(mat[2, 1])
+println(mat[begin, begin])
+println(mat[end, end])
+println(mat[begin, end])
+println("Get column 2: $(mat[:, 2])")
+println("Get row 2: $(mat[2, :])")
+println(mat[[CartesianIndex(2, 1), CartesianIndex(2, 2)]])
+println(mat[2:2, :]) # ???
+println(mat[mat .> 2])
